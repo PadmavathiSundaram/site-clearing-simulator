@@ -58,18 +58,26 @@ They are all uncleared. The land type comes from the file loaded.
 The coordinates are the position in the 2D array. Each operation has a navigation Strategy.
 
 •	Advance -> move front in the existing orientation
+
 •	Left -> move one back to the current orientation in the cycle of orientations (Front,down,back,up)
+
 •	Right -> move one ahead to the current orientation in the cycle of orientations – eg: Right of down is back
+
 •	Quit - > terminate
+
 
 Each orientation has a logic to get the next square.
 
 For example: current square [1][1]
 
 •	Front -> [1][2] -> current + [0][1]
+
 •	Back -> [1][0] -> current + [0][-1]
+
 •	Down -> [2][1] -> current + [1][0]
+
 •	UP -> [0][1] -> current + [-1][0]
+
 
 Using this logic, the next coordinates are determined for each operation.
 The costs are calculated and squares cleared as we navigate to the new square identified.
